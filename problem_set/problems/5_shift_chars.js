@@ -19,7 +19,18 @@ shiftChars('zebra', 5); //=> 'ejgwf'
 ***********************************************************************/
 
 function shiftChars(word, num) {
+  let alphabet = [
+  'a','b','c','d','e','f','g','h','i','j','k','l','m',
+  'n','o','p','q','r','s','t','u','v','w','x','y','z'
+  ];
+  let str = '';
 
+  for (let i = 0; i < word.length; i++){
+    let index = (alphabet.indexOf(word[i]) + num) % 26;
+
+    str += alphabet[index];
+  }
+  return str;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
