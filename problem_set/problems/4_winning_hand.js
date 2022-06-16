@@ -16,8 +16,27 @@ winningHand('JKJJ', 'QQJJ'); // => 'DRAW'
 winningHand('KJKJ', 'QQQQ'); // => 'DRAW'
 ***********************************************************************/
 
-function winningHand(hand1, hand2) {
+function score(hand) {
+    let scores = {J : 1, Q : 2, K : 3};
+    let total = 0;
 
+    for (let i = 0; i < hand.length; i++) {
+        total += scores[hand[i]];
+    }
+    return total;
+}
+
+function winningHand(hand1, hand2) {
+    let score1 = score(hand1);
+    let score2 = score(hand2);
+
+    if (score1 > score2) {
+        return hand1;
+    } else if (score2 > score1) {
+        return hand2;
+    } else {
+        return 'DRAW';
+    }
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
