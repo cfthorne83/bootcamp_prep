@@ -14,7 +14,16 @@ isUniqueAnagram('abcd', 'abcdx'); // => false
 ***********************************************************************/
 
 function isUniqueAnagram(word1, word2) {
+    if (word1.length !== word2.length) {
+        return false;
+    }
 
+    for (let i = 0; i < word1.length; i++) {
+        if (!word2.includes(word1[i])) {
+            return false;
+        }
+    }
+    return true;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
